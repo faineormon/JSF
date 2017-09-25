@@ -22,5 +22,14 @@
 		<br/>					 
 		<h:outputLabel value="Idade: #{alfredoController.idade}" />		
 	</h:form>
+	<h:form>
+	<h:inputText name="visor" id="visor" value="#{calculadoraController.valor1}"/>
+	<h:inputText name="visor2" id="visor2" value="#{calculadoraController.valor2}"/>
+	<h:commandButton name="btoMais1" id="btoMais" value="+" action="#{calculadoraController.somar()}"/>
+	<h:commandButton name="btoMenos" id="btoMenos" value="-"/>
+	<h:commandButton name="btoMultiplicar" id="btoMultiplicar" value="x"/>
+	<h:commandButton name="btoDividir" id="btoDividir" value="/"/>
+	<h:outputLabel value="Resultado: #{calculadoraController.resultado}" />
+	</h:form>
 </h:body>
 </html>
