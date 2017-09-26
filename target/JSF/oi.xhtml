@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html xmlns = "http://www.w3.org/1999/xhtml" 
-   xmlns:h = "http://java.sun.com/jsf/html">
+   xmlns:h = "http://java.sun.com/jsf/html"
+   xmlns:f = "http://java.sun.com/jsf/core"
+   lang="pt-br">
 <h:head>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"/>
 	<h:title>Texte de Java</h:title>
 </h:head>
 <h:body>
@@ -9,8 +15,8 @@
 		<i>Olá mundo e galera!</i>
 		<strong>Olá infermeira!!</strong>
 		<h:inputText name="primeiroCampo" id="primeiroCampo" value="Olá mundo"/>
-		<h:commandButton name="btnPrimeiro" id="btnPrimeiro" value="Meu primeiro botão"/>
-		<h:inputTextarea name="txtArea" id="txtArea" cols="20" rows="30"/>
+		<h:commandButton class = "btn btn-dark" name="btnPrimeiro" id="btnPrimeiro" value="Meu primeiro botão"/>
+		<h:inputTextarea name="txtArea" id="txtArea" cols="20" rows="5"/>
 		<br/>
 		<br/>
 		<h:commandButton id="btnAlfredo" 
@@ -42,7 +48,8 @@
 	<h:selectBooleanCheckbox>Ou não testar
 	</h:selectBooleanCheckbox>
 	<br/>
-	<h:selectOneMenu value = "#{EstadosSulBrasil}">
+	<h:selectOneMenu id="EstadosSul" value = "#{alfredoController.estadosSul}">
+		<f:selectItems value="#{alfredoController.getListaEstados}"/>
 	</h:selectOneMenu>
 	<h:selectOneRadio>
 	</h:selectOneRadio>
@@ -51,5 +58,9 @@
 		<h:commandButton name="btoConverter" id="btoConverter" value="Conversor" action="#conversorValor.formatar()}"/>
 		<h:outputLabel value="R$: #{conversorValor.valorFormatado}" />
 	</h:form>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"/>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"/>
 </h:body>
 </html>
