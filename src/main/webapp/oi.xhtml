@@ -23,13 +23,33 @@
 		<h:outputLabel value="Idade: #{alfredoController.idade}" />		
 	</h:form>
 	<h:form>
-	<h:inputText name="visor" id="visor" value="#{calculadoraController.valor1}"/>
-	<h:inputText name="visor2" id="visor2" value="#{calculadoraController.valor2}"/>
-	<h:commandButton name="btoMais1" id="btoMais" value="+" action="#{calculadoraController.somar()}"/>
-	<h:commandButton name="btoMenos" id="btoMenos" value="-" action="#{calculadoraController.subtrair()}"/>
-	<h:commandButton name="btoMultiplicar" id="btoMultiplicar" value="x" action="#{calculadoraController.mutiplicar()}"/>
-	<h:commandButton name="btoDividir" id="btoDividir" value="/" action="#{calculadoraController.dividir()}"/>
-	<h:outputLabel value="Resultado: #{calculadoraController.resultado}" />
+		<h:inputText name="visor" id="visor" value="#{calculadoraController.valor1}"/>
+		<h:inputText name="visor2" id="visor2" value="#{calculadoraController.valor2}"/>
+		<h:commandButton name="btoMais1" id="btoMais" value="+" action="#{calculadoraController.somar()}"/>
+		<h:commandButton name="btoMenos" id="btoMenos" value="-" action="#{calculadoraController.subtrair()}"/>
+		<h:commandButton name="btoMultiplicar" id="btoMultiplicar" value="x" action="#{calculadoraController.mutiplicar()}"/>
+		<h:commandButton name="btoDividir" id="btoDividir" value="/" action="#{calculadoraController.dividir()}"/>
+		<h:outputLabel value="Resultado: #{calculadoraController.resultado}" />
+	</h:form>
+	<h:form>
+		<h:inputText name="recebendoPalavra" id="recebendoPalavra" value="#{maiusculaMinusculaController.palavra}"/>
+		<h:commandButton name="btoMaiuscula" id="btoMaiuscula" value="Maiúscula" action="#{maiusculaMinusculaController.maiuscula()}"/>
+		<h:commandButton name="btoMinuscula" id="btoMinuscula" value="Minuscula" action="#{maiusculaMinusculaController.minuscula()}"/>
+		<h:outputLabel value="Resultado: #{maiusculaMinusculaController.resultado}" />	
+	</h:form>
+	<h:selectBooleanCheckbox>Testar
+	</h:selectBooleanCheckbox>
+	<h:selectBooleanCheckbox>Ou não testar
+	</h:selectBooleanCheckbox>
+	<br/>
+	<h:selectOneMenu value = "#{EstadosSulBrasil}">
+	</h:selectOneMenu>
+	<h:selectOneRadio>
+	</h:selectOneRadio>
+	<h:form>
+		<h:inputText name="valor" id="valor" value="#{conversorValor.valor}"/>
+		<h:commandButton name="btoConverter" id="btoConverter" value="Conversor" action="#conversorValor.formatar()}"/>
+		<h:outputLabel value="R$: #{conversorValor.valorFormatado}" />
 	</h:form>
 </h:body>
 </html>
