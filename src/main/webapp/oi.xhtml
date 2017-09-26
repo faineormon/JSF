@@ -43,6 +43,7 @@
 		<h:commandButton name="btoMinuscula" id="btoMinuscula" value="Minuscula" action="#{maiusculaMinusculaController.minuscula()}"/>
 		<h:outputLabel value="Resultado: #{maiusculaMinusculaController.resultado}" />	
 	</h:form>
+	<h:form>
 	<h:selectBooleanCheckbox>Testar
 	</h:selectBooleanCheckbox>
 	<h:selectBooleanCheckbox>Ou não testar
@@ -52,11 +53,13 @@
 		<f:selectItems value="#{alfredoController.listaEstados}"/>
 	</h:selectOneMenu>
 	<h:selectOneRadio>
+		<f:selectItems value="#{alfredoController.listaEstados}"/>
 	</h:selectOneRadio>
+	</h:form>
 	<h:form>
 		<h:inputText name="valor" id="valor" value="#{conversorValor.valor}"/>
 		<h:commandButton name="btoConverter" id="btoConverter" value="Conversor" action="#conversorValor.formatar()}"/>
-		<h:outputLabel value="R$: #{conversorValor.valorFormatado}" />
+		<h:outputLabel value="#{conversorValor.valorFormatado}"><f:convertNumber currencyCode="BRL" type="currency"/></h:outputLabel>
 	</h:form>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"/>

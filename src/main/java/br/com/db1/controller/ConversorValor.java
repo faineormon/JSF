@@ -1,33 +1,29 @@
 package br.com.db1.controller;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class ConversorValor {
-	private String valor;
-	private String valorFormatado;
+	private Double valor;
+	private Double valorFormatado;
 
-	public String getValor() {
+	public Double getValor() {
 		return valor;
 	}
 
-	public void setValor(String valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
 	}
 	
-	public String getValorFormatado() {
+	public Double getValorFormatado() {
 		return valorFormatado;
 	}
 
-	public void setValorFormatado(String valorFormatado) {
+	public void setValorFormatado(Double valorFormatado) {
 		this.valorFormatado = valorFormatado;
 	}
 	
 	public void formatar() {
-		NumberFormat formatter = new DecimalFormat("#0.000");
-		valorFormatado = formatter.format(valor);
+		valorFormatado = valor;
 	}
 }

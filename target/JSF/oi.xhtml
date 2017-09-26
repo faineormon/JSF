@@ -49,14 +49,15 @@
 	</h:selectBooleanCheckbox>
 	<br/>
 	<h:selectOneMenu id="EstadosSul" value = "#{alfredoController.estadosSul}">
-		<f:selectItems value="#{alfredoController.getListaEstados}"/>
+		<f:selectItems value="#{alfredoController.listaEstados}"/>
 	</h:selectOneMenu>
 	<h:selectOneRadio>
+		<f:selectItems value="#{alfredoController.listaEstados}"/>
 	</h:selectOneRadio>
 	<h:form>
 		<h:inputText name="valor" id="valor" value="#{conversorValor.valor}"/>
 		<h:commandButton name="btoConverter" id="btoConverter" value="Conversor" action="#conversorValor.formatar()}"/>
-		<h:outputLabel value="R$: #{conversorValor.valorFormatado}" />
+		<h:outputLabel value="R$: #{conversorValor.valorFormatado}"><f:convertNumber currencyCode="BRL" type="currency"/></h:outputLabel>
 	</h:form>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"/>
