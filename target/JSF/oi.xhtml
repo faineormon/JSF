@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml" 
+   xmlns:h = "http://java.sun.com/jsf/html">
+<h:head>
+	<h:title>Texte de Java</h:title>
+</h:head>
+<h:body>
+	<h:form>
+		<i>Olá mundo e galera!</i>
+		<strong>Olá infermeira!!</strong>
+		<h:inputText name="primeiroCampo" id="primeiroCampo" value="Olá mundo"/>
+		<h:commandButton name="btnPrimeiro" id="btnPrimeiro" value="Meu primeiro botão"/>
+		<h:inputTextarea name="txtArea" id="txtArea" cols="20" rows="30"/>
+		<br/>
+		<br/>
+		<h:commandButton id="btnAlfredo" 
+			value="Mostre mais dados do alfredo" 
+			action="#{alfredoController.exibirDadosAlfredo}"
+			/>
+		<br/>	
+		<h:outputLabel value="Nome: #{alfredoController.nome}" />	
+		<br/>					 
+		<h:outputLabel value="Idade: #{alfredoController.idade}" />		
+	</h:form>
+	<h:form>
+	<h:inputText name="visor" id="visor" value="#{calculadoraController.valor1}"/>
+	<h:inputText name="visor2" id="visor2" value="#{calculadoraController.valor2}"/>
+	<h:commandButton name="btoMais1" id="btoMais" value="+" action="#{calculadoraController.somar()}"/>
+	<h:commandButton name="btoMenos" id="btoMenos" value="-" action="#{calculadoraController.subtrair()}"/>
+	<h:commandButton name="btoMultiplicar" id="btoMultiplicar" value="x" action="#{calculadoraController.mutiplicar()}"/>
+	<h:commandButton name="btoDividir" id="btoDividir" value="/" action="#{calculadoraController.dividir()}"/>
+	<h:outputLabel value="Resultado: #{calculadoraController.resultado}" />
+	</h:form>
+</h:body>
+</html>
